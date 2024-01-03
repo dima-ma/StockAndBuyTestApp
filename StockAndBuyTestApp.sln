@@ -1,6 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAndBuyTestApp", "StockAndBuyTestApp\StockAndBuyTestApp.csproj", "{A7138691-97B4-41E5-8275-C139CB4D965B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAndBuyTestApp.Api", "StockAndBuyTestApp.Api\StockAndBuyTestApp.Api.csproj", "{A7138691-97B4-41E5-8275-C139CB4D965B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAndBuyTestApp.Domain", "StockAndBuyTestApp.Domain\StockAndBuyTestApp.Domain.csproj", "{3D6A0D8E-30EA-4352-99DE-3EC1855353D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAndBuyTestApp.Contracts", "StockAndBuyTestApp.Contracts\StockAndBuyTestApp.Contracts.csproj", "{F9743C7C-F441-4874-9461-9714D9FB132E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAndBuyTestApp.Application", "StockAndBuyTestApp.Application\StockAndBuyTestApp.Application.csproj", "{4C13A2C4-74BC-494D-9A1B-F9246B811946}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockAndBuyTestApp.Infrastructure", "StockAndBuyTestApp.Infrastructure\StockAndBuyTestApp.Infrastructure.csproj", "{B6254BC5-E4F4-49DF-BF5C-C7FC962EA26B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +20,23 @@ Global
 		{A7138691-97B4-41E5-8275-C139CB4D965B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7138691-97B4-41E5-8275-C139CB4D965B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7138691-97B4-41E5-8275-C139CB4D965B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D6A0D8E-30EA-4352-99DE-3EC1855353D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D6A0D8E-30EA-4352-99DE-3EC1855353D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D6A0D8E-30EA-4352-99DE-3EC1855353D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D6A0D8E-30EA-4352-99DE-3EC1855353D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9743C7C-F441-4874-9461-9714D9FB132E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9743C7C-F441-4874-9461-9714D9FB132E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9743C7C-F441-4874-9461-9714D9FB132E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9743C7C-F441-4874-9461-9714D9FB132E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C13A2C4-74BC-494D-9A1B-F9246B811946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C13A2C4-74BC-494D-9A1B-F9246B811946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C13A2C4-74BC-494D-9A1B-F9246B811946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C13A2C4-74BC-494D-9A1B-F9246B811946}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6254BC5-E4F4-49DF-BF5C-C7FC962EA26B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6254BC5-E4F4-49DF-BF5C-C7FC962EA26B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6254BC5-E4F4-49DF-BF5C-C7FC962EA26B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6254BC5-E4F4-49DF-BF5C-C7FC962EA26B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection
 EndGlobal

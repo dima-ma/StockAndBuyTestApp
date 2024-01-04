@@ -9,11 +9,12 @@ public class QueryBundleExpandedInformationCommandHandler
 {
     private readonly IBundleRepository _bundleRepository;
     private readonly IBundleToProductRepository _bundleToProductRepository;
-    
-    public QueryBundleExpandedInformationCommandHandler(IBundleRepository bundleRepository, IBundleToProductRepository bundleToProductRepository)
+    private readonly IBundleToBundleRepository _bundleToBundleRepository;
+    public QueryBundleExpandedInformationCommandHandler(IBundleRepository bundleRepository, IBundleToProductRepository bundleToProductRepository, IBundleToBundleRepository bundleToBundleRepository)
     {
         _bundleRepository = bundleRepository;
         _bundleToProductRepository = bundleToProductRepository;
+        _bundleToBundleRepository = bundleToBundleRepository;
     }
 
     public async Task<QueryBundleExpandedInformationResponse> Handle(QueryBundleExpandedInformationCommand request,
@@ -29,7 +30,12 @@ public class QueryBundleExpandedInformationCommandHandler
         List<ProductInBundleDetails> productDetails = 
             await _bundleToProductRepository.GetProductDetailsForBundle(bundleId);
         
+        List<BundleInBundleDetails> bundleDetails =
+            await _bundleToBundleRepository.GetBundleDetailsForBundle(bundleId);
+        
+        
         return new QueryBundleExpandedInformationResponse(bundle.Id.Value, bundle.Name, bundle.Description,
-            bundle.CreatedDateTime, bundle.UpdatedDateTime, productDetails);
+            bundle.CreatedDateTime, bundle.UpdatedDateTime, 
+            productDetails, bundleDetails);
     }
 }

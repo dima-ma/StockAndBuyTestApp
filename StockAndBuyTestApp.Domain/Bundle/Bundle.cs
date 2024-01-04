@@ -1,4 +1,5 @@
-﻿using StockAndBuyTestApp.Domain.Bundle.ValueObjects;
+﻿using StockAndBuyTestApp.Domain.Bundle.Entites;
+using StockAndBuyTestApp.Domain.Bundle.ValueObjects;
 using StockAndBuyTestApp.Domain.Common.Entities;
 using StockAndBuyTestApp.Domain.Common.Models;
 using StockAndBuyTestApp.Domain.Common.ValueObjects;
@@ -40,8 +41,16 @@ public sealed class Bundle : AggregateRoot<BundleId>
         _productItemsIds.Add(bundleProductRelation.Id);
     }
 
-    public void AddProductRelationshipRange(List<BundleToProductRelationship> bundleProductRelations)
+    public void AddProductRelationshipRange(IEnumerable<BundleToProductRelationship> bundleProductRelations)
     {
         _productItemsIds.AddRange(bundleProductRelations.Select(p => p.Id));
+    }
+    public void AddBundleRelationship(BundleToBundleRelationship bundleProductRelation)
+    {
+        _bundleItemsIds.Add(bundleProductRelation.Id);
+    }
+    public void AddBundleRelationshipRange(IEnumerable<BundleToBundleRelationship> bundleToBundleRelations)
+    {
+       _bundleItemsIds.AddRange(bundleToBundleRelations.Select(p =>p.Id));
     }
 }

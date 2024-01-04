@@ -13,14 +13,12 @@ public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand,
         _productRepository = productRepository;
     }
 
-    public Task<Product> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+    public async Task<Product> Handle(CreateProductCommand request, CancellationToken cancellationToken)
     {
-        var product = Product.Create(
-            request.Name
-        );
+        var product = Product.Create(request.Name);
 
-        _productRepository.Add(product);
+        await _productRepository.Add(product);
 
-        return Task.FromResult(product);
+        return product;
     }
 }

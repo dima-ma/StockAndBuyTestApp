@@ -14,4 +14,8 @@
       <ProjectReference Include="..\StockAndBuyTestApp.Domain\StockAndBuyTestApp.Domain.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Products\Events\" />
+    </ItemGroup>
+
 </Project>

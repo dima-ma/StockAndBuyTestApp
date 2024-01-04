@@ -45,7 +45,9 @@ This architecture combines DDD principles with practical database design, facili
 
 ## API Documentation
 
-This section provides an overview of the various endpoints available in the API, you can see a clearer description in Swagger.
+This section provides an overview of the various endpoints available in the API, you can see a clearer description in Swagger. 
+
+`The delete and update endpoints were not implemented because they are not required by the task, but with the benefits of a clean architecture, it will take 10 minutes to add them in the future`
 
 1. **Product Endpoints**:
     - **Create New Product**: Add a new product to the system.

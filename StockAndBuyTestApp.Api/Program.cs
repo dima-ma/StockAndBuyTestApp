@@ -25,6 +25,7 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<IBundleRepository, BundleRepository>();
 builder.Services.AddScoped<IStockRepository, StockRepository>();
 builder.Services.AddScoped<IBundleToProductRepository, BundleToProductRepository>();
+builder.Services.AddScoped<IBundleToBundleRepository, BundleToBundleRepository>();
 builder.Services.AddScoped<PublishDomainEventInterceptor>();
 var mapperConfig = new MapperConfiguration(mc =>
 {

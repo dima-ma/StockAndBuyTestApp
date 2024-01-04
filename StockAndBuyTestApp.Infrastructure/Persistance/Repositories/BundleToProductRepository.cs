@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StockAndBuyTestApp.Application.Bundles.Queries.QueryExpandedInformation;
 using StockAndBuyTestApp.Application.Common.Interfaces.Persistance;
 using StockAndBuyTestApp.Domain.Bundle.ValueObjects;
 using StockAndBuyTestApp.Domain.Common.Entities;
@@ -32,4 +33,15 @@ public class BundleToProductRepository : IBundleToProductRepository
         await _context.BundleToProductRelationships.AddRangeAsync(bundleProductRelations);
         await _context.SaveChangesAsync();
     }
+
+    public Task<List<ProductInBundleDetails>> GetProductDetailsForBundle(BundleId bundleId)
+    =>  _context
+        .BundleToProductRelationships
+        .Where(bpr => bpr.BundleId == bundleId)
+        .Join(_context.Products,
+            bpr => bpr.ProductId,
+            p => p.Id,
+            (bpr, p)
+                => new ProductInBundleDetails(p.Id.Value, p.Name, bpr.QuantityNeeded))
+        .ToListAsync();
 }

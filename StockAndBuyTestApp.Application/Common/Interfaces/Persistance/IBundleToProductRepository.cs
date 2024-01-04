@@ -1,4 +1,5 @@
-﻿using StockAndBuyTestApp.Domain.Bundle.ValueObjects;
+﻿using StockAndBuyTestApp.Application.Bundles.Queries.QueryExpandedInformation;
+using StockAndBuyTestApp.Domain.Bundle.ValueObjects;
 using StockAndBuyTestApp.Domain.Common.Entities;
 using StockAndBuyTestApp.Domain.Common.ValueObjects;
 
@@ -9,4 +10,5 @@ public interface IBundleToProductRepository
     Task Add(BundleToProductRelationship bundleProductRelation);
     Task<BundleToProductRelationship?> GetById(BundleToProductRelationshipId relationshipId);
     Task AddRange(List<BundleToProductRelationship> bundleProductRelations);
+    Task<List<ProductInBundleDetails>> GetProductDetailsForBundle(BundleId bundleId);
 }

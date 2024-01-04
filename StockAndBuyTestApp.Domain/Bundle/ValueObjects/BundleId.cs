@@ -1,4 +1,5 @@
-﻿using StockAndBuyTestApp.Domain.Common.Models;
+﻿using System.Net.WebSockets;
+using StockAndBuyTestApp.Domain.Common.Models;
 
 namespace StockAndBuyTestApp.Domain.Bundle.ValueObjects;
 
@@ -17,4 +18,6 @@ public sealed class BundleId : ValueObject
     {
         yield return Value;
     }
+
+    public static BundleId Create(Guid value) => new(value);
 }

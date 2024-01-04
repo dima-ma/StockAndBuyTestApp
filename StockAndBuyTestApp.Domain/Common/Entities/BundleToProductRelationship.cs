@@ -1,4 +1,6 @@
-﻿using StockAndBuyTestApp.Domain.Bundle.ValueObjects;
+﻿
+
+using StockAndBuyTestApp.Domain.Bundle.ValueObjects;
 using StockAndBuyTestApp.Domain.Common.Models;
 using StockAndBuyTestApp.Domain.Common.ValueObjects;
 using StockAndBuyTestApp.Domain.Product.ValueObjects;
@@ -24,6 +26,10 @@ public sealed class BundleToProductRelationship : Entity<BundleToProductRelation
         UpdatedDateTime = updatedDateTime;
     }
 
+    public BundleToProductRelationship()
+    {
+        
+    }
     public static BundleToProductRelationship Create(ProductId childProductId, BundleId parentId, int quantityNeeded)
         => new(BundleToProductRelationshipId.CreateUnique(), quantityNeeded, childProductId, parentId,
             DateTime.Now, DateTime.Now);

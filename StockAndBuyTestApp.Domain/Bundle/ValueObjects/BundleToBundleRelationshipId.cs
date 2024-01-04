@@ -17,4 +17,6 @@ public sealed class BundleToBundleRelationshipId : ValueObject
     {
         yield return Value;
     }
+
+    public static BundleToBundleRelationshipId Create(Guid value) => new(value);
 }

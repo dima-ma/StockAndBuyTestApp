@@ -18,4 +18,6 @@ public sealed class StockId : ValueObject
     {
         yield return Value;
     }
+
+    public static StockId Create(Guid value) => new(value);
 }

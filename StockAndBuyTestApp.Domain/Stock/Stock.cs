@@ -20,6 +20,10 @@ public class Stock : AggregateRoot<StockId>
         UpdatedDateTime = updatedDateTime;
     }
 
+    public Stock()
+    {
+        
+    }
     public static Stock Create(ProductId productId, int count)
         => new(StockId.CreateUnique(), productId, count, DateTime.Now, DateTime.Now);
 }

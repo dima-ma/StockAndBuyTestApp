@@ -1,8 +1,9 @@
 ﻿namespace StockAndBuyTestApp.Domain.Common.Models;
 
-public class Entity<TId> : IEquatable<Entity<TId>>
+public class Entity<TId> : IEquatable<Entity<TId>>, IHasDomainEvents
     where TId : notnull
 {
+    private readonly List<IDomainEvent> _domainEvents = new();
     public TId Id { get; }
 
     public Entity(TId id)
@@ -10,6 +11,14 @@ public class Entity<TId> : IEquatable<Entity<TId>>
         Id = id;
     }
 
+    public Entity()
+    {
+        
+    }
+
+    public void AddDomainEvent(IDomainEvent domainEvent) => _domainEvents.Add(domainEvent);
+    public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+    public void ClearDomainEvents() => _domainEvents.Clear();
     public override bool Equals(object? obj) => Equals(obj as Entity<TId>);
 
     public static bool operator ==(Entity<TId> obj1, Entity<TId> obj2) => Equals(obj1, obj2);
